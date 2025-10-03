@@ -274,24 +274,28 @@ button:hover {
   overflow: hidden;
   background: rgba(0,0,0,0.5);
   padding: 10px 0;
+  position: relative;
+  z-index: 2;
 }
 
 .roll-track {
   display: flex;
-  width: calc(250px * 10); /* adjust based on how many images */
-  animation: roll 25s linear infinite; /* ✅ infinite loop */
+  flex-wrap: nowrap;
+  animation: roll 40s linear infinite; /* smoother on mobile */
 }
 
 #cameraRoll img {
-  width: 250px;
-  height: 150px;
-  margin: 0 5px;
-  border-radius: 10px;
+  flex-shrink: 0;            /* stop shrinking on small screens */
+  width: 40vw;               /* each photo takes 40% of screen width */
+  max-width: 220px;          /* but not too big */
+  height: auto;
+  margin: 0 8px;
+  border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-   object-fit: cover; 
+  object-fit: cover;
 }
 
 @keyframes roll {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-50%); } /* seamless loop */
 }
