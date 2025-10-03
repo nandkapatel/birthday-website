@@ -134,37 +134,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-function unlock() {
-  let input = document.getElementById("secretInput").value.toLowerCase();
-  let error = document.getElementById("error");
 
-  if (input === "nand") {
-    document.getElementById("lockScreen").style.display = "none";
-    document.getElementById("mainContent").style.display = "block";
-
-    // 🎶 Start background music after unlock (works on mobile)
-    let music = document.getElementById("bg-music");
-    if (music) music.play();
-
-    // ✅ Attach card flip event after unlock
-    let card = document.querySelector(".card");
-    if (card) {
-      card.addEventListener("click", () => {
-        card.classList.toggle("open");
-
-        if (card.classList.contains("open")) {
-          document.getElementById("loveMessage").innerHTML = "";
-          typeWriter(
-            "You make my world brighter every day, and I feel lucky to have you. I love you forever ❤️",
-            "loveMessage"
-          );
-        }
-      });
-    }
-  } else {
-    error.innerText = "❌ Wrong answer, try again!";
-  }
-}
 
 // Floating hearts animation
 function createHeart() {
@@ -228,4 +198,56 @@ function createStars(count = 100) {
 }
 
 createStars(150); // 150 stars
+
+// Unlock function stays the same
+function unlock() {
+  let input = document.getElementById("secretInput").value.toLowerCase();
+  let error = document.getElementById("error");
+
+  if (input === "nand") {
+    // Hide lock screen
+    document.getElementById("lockScreen").style.display = "none";
+
+    // Show camera roll immediately
+    let roll = document.getElementById("cameraRoll");
+    if (roll) roll.style.display = "block";
+
+    // Show main content immediately too
+    document.getElementById("mainContent").style.display = "block";
+
+    // Attach flip action to card
+    let card = document.getElementById("birthdayCard");
+    if (card) {
+      card.addEventListener("click", () => {
+        card.classList.toggle("open");
+
+        // Start typewriter only when card is opened
+        if (card.classList.contains("open")) {
+          document.getElementById("loveMessage").innerHTML = "";
+          typeWriter(
+            "You make my world brighter every day, and I feel lucky to have you. I love you forever ❤️",
+            "loveMessage"
+          );
+        }
+      });
+    }
+  } else {
+    error.innerText = "❌ Wrong answer, try again!";
+  }
+}
+
+// Typewriter effect
+function typeWriter(text, elementId, speed = 80) {
+  let i = 0;
+  function typing() {
+    if (i < text.length) {
+      document.getElementById(elementId).innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, speed);
+    }
+  }
+  typing();
+}
+
+
 
