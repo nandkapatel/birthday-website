@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="images/WhatsApp Image 2025-10-03 at 01.14.40_c740948a.jpg">
+
+<link rel="apple-touch-icon" sizes="180x180" href="images/WhatsApp Image 2025-10-03 at 01.14.40_c740948a.jpg">
+<meta name="theme-color" content="#ff69b4">
+
+
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+
+  <div id="lockScreen">
+  <h1>💖 Welcome 💖</h1>
+  <p>Answer this question to unlock your surprise 🎁</p>
+  <h3>👉 What is your favorite food?</h3>
+  <input type="text" id="secretInput" placeholder="Type your answer...">
+  <button onclick="unlock()">Unlock</button>
+  <p id="error"></p>
+</div>
+
+  <div id="mainContent" style="display:none;">
+    <div class="card" id="birthdayCard">
+      <div class="front">
+        <h1>🎉 Happy Birthday 🎉</h1>
+        <p>Tap to open 💌</p>
+      </div>
+      <div class="inside">
+        <h2>Happy Birthday My Love ❤️</h2>
+        <p id="loveMessage" class="typewriter"></p>
+        <img src="images/IMG-20251003-WA0012.jpg" alt="Us together" class="photo">
+        <img src="images/IMG-20251003-WA0016.jpg" alt="Memory" class="photo">
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="inside">
+  <h2>Happy Birthday My Love ❤️</h2>
+  <p id="loveCounter"></p>
+
+  <p id="loveMessage" class="typewriter"></p>
+  <img src="images/IMG-20251003-WA0010.jpg" alt="Us together" class="photo">
+  <img src="images/IMG-20251003-WA0011.jpg" alt="Memory" class="photo">
+</div>
+
+<div class="timeline">
+  <h2>✨ Our Journey ✨</h2>
+  
+  <div class="timeline-item left">
+    <img src="images/IMG-20251003-WA0001.jpg" alt="First memory">
+    <p>💖 The day we met – everything changed</p>
+  </div>
+  
+  <div class="timeline-item right">
+    <img src="images/IMG-20251003-WA0002.jpg" alt="Special moment">
+    <p>🥰 Our first trip together – unforgettable</p>
+  </div>
+  
+  <div class="timeline-item left">
+    <img src="images/IMG-20251003-WA0024.jpg" alt="Cute moment">
+    <p>❤️ Every little moment with you is magic</p>
+  </div>
+  
+  <div class="timeline-item right">
+    <img src="images/WhatsApp Image 2025-10-03 at 00.14.54_5af88051.jpg" alt="Birthday">
+    <p>🎂 Celebrating your birthday together</p>
+  </div>
+</div>
+
+<!-- Background music -->
+<audio id="bg-music" autoplay loop>
+  <source src="music/Lord Huron - The Night We Met (Lyrics).mp3" type="audio/mpeg">
+</audio>
+
+<!-- Final Surprise Section -->
+<div id="finalMessage">
+  <h1>💖 Happy Birthday My Love 💖</h1>
+  <p>Forever yours, Nand ❤️</p>
+</div>
+
+
+<canvas id="fireworks"></canvas>
+<script src="script.js"></script>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
